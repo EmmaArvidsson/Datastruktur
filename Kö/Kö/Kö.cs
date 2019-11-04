@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Kö
 {
-    class Queue
+    class Queue<T>
     {
 
-        private int[] queue;
+        private T[] queue;
 
         private int count = 0;
 
@@ -15,7 +15,7 @@ namespace Kö
         { get { return count; } }
 
 
-        public int this[int i]
+        public T this[int i]
         {
             get { return queue[i]; }
             set { queue[i] = value; }
@@ -23,17 +23,17 @@ namespace Kö
 
         public Queue()
         {
-            queue = new int[10];
+            queue = new T[10];
         }
 
         public Queue(int size)
         {
-            queue = new int[size];
+            queue = new T[size];
         }
 
 
 
-        public void Enqueue(int value)
+        public void Enqueue(T value)
         {
             if (queue.Length == count)
                 ReSize((int)(count * 1.3));
@@ -43,13 +43,13 @@ namespace Kö
 
         }
 
-        public int Dequeue()
+        public T Dequeue()
         {
             count--;
             if (count == queue.Length/2 && queue.Length >  100)
                 ReSize((int)(count * 1.3));
 
-            int var = queue[0];
+            T var = queue[0];
 
             for (int i = 0; i < Count; i++)
             {
@@ -61,17 +61,16 @@ namespace Kö
         }
 
 
-        public int Peek()
+        public T Peek()
         {
             return queue[0];
         }
 
 
-
         private void ReSize(int size)
         {
-            int[] temp = queue;
-            queue = new int[size];
+            T[] temp = queue;
+            queue = new T[size];
 
             for (int i = 0; 1 < count; i++)
             {
@@ -82,7 +81,7 @@ namespace Kö
         public void Clear()
         {
             count = 0;
-            queue = new int[10]; 
+            queue = new T[10]; 
         }
     }
 }
