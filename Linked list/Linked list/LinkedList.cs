@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Linked_list
 {
-    class LinkedList
+    class LinkedList<T>
     {
 
         private Node head;

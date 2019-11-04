@@ -4,10 +4,19 @@ namespace Linked_list
 {
     class Program
     {
+
+        static void Swap<T>(ref T a, ref T b)
+        {
+            T temp = a;
+            a = b;
+            b = temp;
+
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Add First: ");
-            LinkedList mylist = new LinkedList();
+            LinkedList<int> mylist = new LinkedList<int>();
 
             mylist.AddFirst(2);
             mylist.AddFirst(8);
@@ -15,7 +24,7 @@ namespace Linked_list
             mylist.PrintList();
 
             Console.WriteLine("Add last: ");
-            LinkedList mylist2 = new LinkedList();
+            LinkedList<int> mylist2 = new LinkedList<int>();
 
             mylist2.AddLast(3);
             mylist2.AddLast(56);
