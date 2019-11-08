@@ -10,7 +10,10 @@ namespace Kö
             T temp = a;
             a = b;
             b = temp;
+
         }
+
+       
 
         static void Main(string[] args)
         {
@@ -21,17 +24,34 @@ namespace Kö
             queue.Enqueue(3);
 
             Console.WriteLine(queue.Peek());
+            Console.WriteLine("Hur många element det är i kön: " + queue.Count);
+
+            queue.Dequeue();
+            
+
+            Console.WriteLine(queue.Peek());
+            Console.WriteLine("Hur många element det är i kön: " + queue.Count);
 
             queue.Dequeue();
 
             Console.WriteLine(queue.Peek());
 
-            queue.Dequeue();
+            Console.WriteLine("Hur många element det är i kön: " + queue.Count);
 
-            Console.WriteLine(queue.Peek());
+            string k = "Jag har en katt";
+            string u = "Jag har inte en katt";
 
-            Console.WriteLine("Hur många element det är i kön" + queue.Count);
+            int a = 4;
+            int b = 6;
 
+            Console.WriteLine(a + "  " + b);
+            Swap<int>(ref a, ref b);
+            Console.WriteLine(a + "  " + b);
+
+            
+            Queue<string> k = new Queue<string>();
+            Queue< string > u = new Queue<string>();
+            Swap<Queue<string>>(ref k, ref u);
 
         }
     }
